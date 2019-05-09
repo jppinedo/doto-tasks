@@ -1,4 +1,6 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 
 class NewProject extends React.Component {
   constructor(props){
@@ -20,12 +22,16 @@ class NewProject extends React.Component {
 
   render(){
     return (
-      <div>
-        <h5>Crea un nuevo proyecto:</h5>
-        <label className="d-block" htmlFor="project-title">Nombre del proyecto:</label>
-        <input id="project-title" type="text" name="project-title" placeholder="Escribe el título" onChange={this.onChange} />
-        <button type="button" className="btn btn-primary" name="create" id="btn-create" onClick={this.onClick} >Crear</button>
-      </div>
+      <Form>
+        <h5>Crear nuevo proyecto:</h5>
+        <Form.Group controlId="project_title">
+          <Form.Label>Nombre del proyecto:</Form.Label>
+          <Form.Control type="text" placeholder="Escribe el título" onChange={this.onChange} />
+        </Form.Group>
+        <Button variant="primary" type="button" onClick={this.onClick}>
+          Crear Proyecto
+        </Button>
+      </Form>
     );
   }
 }

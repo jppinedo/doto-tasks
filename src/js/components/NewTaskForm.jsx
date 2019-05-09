@@ -1,4 +1,6 @@
 import React from 'react';
+import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button'
 
 class NewTaskForm extends React.Component {
   constructor(props){
@@ -23,22 +25,19 @@ class NewTaskForm extends React.Component {
 
   render(){
     return (
-      <form>
-        <div className="form-group">
-          <label htmlFor="task_title">Nombre de la tarea</label>
-          <input type="text" className="form-control" id="task_title" placeholder="Escribe el título de la nueva tarea" 
-            onChange={this.onChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="task_description">Descripción</label>
-          <textarea className="form-control" id="task_description" rows="3" aria-describedby="task-description-help"
-            onChange={this.onChange}
-          ></textarea>
-          <small id="task-description-help" className="form-text text-muted">Una pequeña descripción del trabajo a realizar.</small>
-        </div>
-        <button type="button" className="btn btn-primary" onClick={this.onClick}>Guardar</button>
-      </form>
+      <Form>
+        <Form.Group controlId="task_title">
+          <Form.Label>Nombre de la tarea</Form.Label>
+          <Form.Control type="text" placeholder="Escribe el título de la nueva tarea" onChange={this.onChange} />
+        </Form.Group>
+
+        <Form.Group controlId="task_description">
+          <Form.Label>Descripción</Form.Label>
+          <Form.Control as="textarea" rows="3" onChange={this.onChange} />
+        </Form.Group>
+
+        <Button variant="primary" type="button" onClick={this.onClick}>Agregar</Button>
+      </Form>
     );
   }
 }

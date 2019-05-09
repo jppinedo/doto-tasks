@@ -6,6 +6,11 @@ import New from './sections/New.jsx';
 // eslint-disable-next-line
 import { BrowserRouter as Router, Route, Link, Redirect } from "react-router-dom";
 
+const links = [
+  {name: 'home', path: '/'},
+  {name: 'new', path: '/new'},
+];
+
 class App extends React.Component {
   constructor(props){
     super(props);
@@ -30,13 +35,16 @@ class App extends React.Component {
   }
 
   changePage(page){
-    this.setState({ page: page })
+    this.setState({ page: page.name }, function(){
+      console.log("page name: "+ page.name + ", page path: "+ page.path);
+      return <Redirect to={page.path} />;
+    })
   }
 
   render(){
     return (
       <div className="app-wrapper">
-        <Header key={this.state.page} page={this.state.page} onClick={this.changePage}/>
+        <Header key={this.state.page} links={links} page={this.state.page} onClick={this.changePage}/>
         <Router>
           <div className="container mt-4">
             <Route 

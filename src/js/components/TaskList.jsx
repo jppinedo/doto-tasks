@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoListItem from './TodoListItem.jsx';
 import NewGuid from '../utils/guid.js';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 function getList(list){
   if(list.length){
@@ -24,12 +25,12 @@ class TaskList extends React.Component {
   }
   render(){
     return (
-      <div className="mt-4">
-        <ul key={this.state.list} className="list-group">
-          <li className="list-group-item active">Tareas disponibles:</li>
+      <ListGroup key={this.state.list} as="ul" className="mt-4">
+        <ListGroup.Item as="li" active>
+          Tareas disponibles:
+        </ListGroup.Item>
           { getList(this.props.list) }
-        </ul>
-      </div>
+      </ListGroup>
     );
   }
 }
