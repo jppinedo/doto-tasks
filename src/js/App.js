@@ -30,7 +30,7 @@ class App extends React.Component {
   render(){
     return (
       <Router>
-        <div>
+        <div className="container">
           <Route 
             exact path="/"  
             render={() => (

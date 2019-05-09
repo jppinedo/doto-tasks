@@ -5,7 +5,7 @@ import NewProject from '../components/NewProject.jsx';
 class Home extends React.Component{
   render(){
     return(
-      <div className="App">
+      <div className="home">
         <ProjectList />
         <NewProject newProject={this.props.newProject}/>
       </div>
