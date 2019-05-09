@@ -1,11 +1,13 @@
 import React from 'react';
 import TodoListItem from './TodoListItem.jsx';
+import NewGuid from '../utils/guid.js';
 
 function getList(list){
   if(list.length){
-    return list.map(item => {
+    return list.map((item, i) => {
+      let id = NewGuid();
       return (
-        <TodoListItem key={item.title} title={item.task_title} description={item.task_description} />
+        <TodoListItem key={(id + i)} title={item.task_title} description={item.task_description} />
       )
     });
   } else {
