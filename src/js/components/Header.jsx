@@ -29,11 +29,13 @@ class Header extends React.Component {
         <Navbar.Brand href="#home">
           <img src={logo} width="40px" height="40px" alt="Home" />
         </Navbar.Brand>
-        <Nav className="mr-auto">
-          { this.getLinks() }
-        </Nav>
+        <Navbar.Collapse>
+          <Nav pullRight className="mr-auto">
+            { this.getLinks() }
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
-      
+
     );
   }
 }
