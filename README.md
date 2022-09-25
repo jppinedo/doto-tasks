@@ -1,5 +1,8 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Doto Tasks
+Test app using ReacJS, React Router and React Bootstrap
+
 ## Available Scripts
 
 In the project directory, you can run:
